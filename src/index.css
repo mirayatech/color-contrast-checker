@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -12,4 +12,121 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* CUSTOM STYLING */
+
+.title,
+.subtitle {
+  text-align: center;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  color: #7e7d84;
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 10px 0 100px;
+}
+
+.card {
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
+  max-width: 1000px;
+  height: 450px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* RIGHT SIDE */
+
+.card__rightSide {
+  width: 100%;
+  padding: 30px 30px 0;
+  display: flex;
+  gap: 20px;
+}
+
+/* RIGHT SIDE BOTH INPUTS */
+
+.card__rightSideText label,
+.card__rightSideBackground label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.card__inputTextWrapper input,
+.card__inputBackgroundWrapper input {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  outline: none;
+}
+
+.card__inputTextWrapper button,
+.card__inputBackgroundWrapper button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  border: 1px solid #dfdfdf;
+}
+.card__rightSideText button,
+.card__inputBackgroundWrapper button {
+  position: absolute;
+  top: 40px;
+  right: 6px;
+}
+/* RIGH SIDE TEXT */
+
+.card__rightSideText {
+  width: 100%;
+  position: relative;
+}
+
+/* RIGH SIDE BACKGROUND */
+
+.card__rightSideBackground {
+  width: 100%;
+  position: relative;
+}
+
+/* LEFT SIDE */
+
+.card__leftSide {
+  width: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* COLOR PICKER */
+
+.textColorPicker,
+.backgroundColorPicker {
+  position: absolute;
+  bottom: 250px;
+  right: -10px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #dfdfdf;
 }
