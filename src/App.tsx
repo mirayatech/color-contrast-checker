@@ -86,16 +86,23 @@ export default function App() {
   }
 
   function getStarsForLargeText(ratio: number): number {
-    if (ratio >= 4.5) return 3; // Good
-    if (ratio >= 3) return 2; // Ok
-    return 1; // Bad
+    if (ratio >= 4.5) return 3;
+    if (ratio >= 3) return 2;
+    return 1;
   }
 
   function getStarsForSmallText(ratio: number): number {
-    if (ratio >= 7) return 3; // Good
-    if (ratio >= 4.5) return 2; // Ok
-    return 1; // Bad
+    if (ratio >= 7) return 3;
+    if (ratio >= 4.5) return 2;
+    return 1;
   }
+
+  const contrastRatio = getContrastRatio(textColor, backgroundColor);
+  const largeTextStars = getStarsForLargeText(contrastRatio);
+  const smallTextStars = getStarsForSmallText(contrastRatio);
+
+  const contrastGrade = getContrastGrade(contrastRatio);
+  const overallStars = getOverallStars(contrastGrade);
 
   return (
     <div className="container">
@@ -105,65 +112,78 @@ export default function App() {
       </h2>
       <div className="card">
         <div className="card__rightSide">
-          <div className="card__rightSideText">
-            <label htmlFor="text-color">Text color</label>
-            <div className="card__inputTextWrapper">
-              <input
-                type="text"
-                name="text-color"
-                id="text-color"
-                value={textColor}
-                onBlur={handleTextColorBlur}
-                onChange={handleTextColorChange}
-              />
-              <button
-                onClick={() => setIsTextColorPickerOpen(true)}
-                style={{
-                  backgroundColor: textColor,
-                }}
-              />
-              {isTextColorPickerOpen ? (
-                <ClickAwayListener
-                  onClickAway={() => setIsTextColorPickerOpen(false)}
-                >
-                  <HexColorPicker
-                    className="textColorPicker"
-                    color={textColor}
-                    onChange={setTextColor}
-                  />
-                </ClickAwayListener>
-              ) : null}
+          <div className="card__rightSideWrapper">
+            <div className="card__rightSideText">
+              <label htmlFor="text-color">Text color</label>
+              <div className="card__inputTextWrapper">
+                <input
+                  type="text"
+                  name="text-color"
+                  id="text-color"
+                  value={textColor}
+                  onBlur={handleTextColorBlur}
+                  onChange={handleTextColorChange}
+                />
+                <button
+                  onClick={() => setIsTextColorPickerOpen(true)}
+                  style={{
+                    backgroundColor: textColor,
+                  }}
+                />
+                {isTextColorPickerOpen ? (
+                  <ClickAwayListener
+                    onClickAway={() => setIsTextColorPickerOpen(false)}
+                  >
+                    <HexColorPicker
+                      className="textColorPicker"
+                      color={textColor}
+                      onChange={setTextColor}
+                    />
+                  </ClickAwayListener>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="card__rightSideBackground">
+              <label htmlFor="background-color">Background color</label>
+              <div className="card__inputBackgroundWrapper">
+                <input
+                  type="text"
+                  name="background-color"
+                  id="background-color"
+                  value={backgroundColor}
+                  onChange={handleBackgroundColorChange}
+                  onBlur={handleBackgroundColorBlur}
+                />
+                <button
+                  onClick={() => setIsBackgroundColorPickerOpen(true)}
+                  style={{
+                    backgroundColor: backgroundColor,
+                  }}
+                />
+                {isBackgroundColorPickerOpen ? (
+                  <ClickAwayListener
+                    onClickAway={() => setIsBackgroundColorPickerOpen(false)}
+                  >
+                    <HexColorPicker
+                      className="backgroundColorPicker"
+                      color={backgroundColor}
+                      onChange={setBackgroundColor}
+                    />
+                  </ClickAwayListener>
+                ) : null}
+              </div>
             </div>
           </div>
-
-          <div className="card__rightSideBackground">
-            <label htmlFor="background-color">Background color</label>
-            <div className="card__inputBackgroundWrapper">
-              <input
-                type="text"
-                name="background-color"
-                id="background-color"
-                value={backgroundColor}
-                onChange={handleBackgroundColorChange}
-                onBlur={handleBackgroundColorBlur}
-              />
-              <button
-                onClick={() => setIsBackgroundColorPickerOpen(true)}
-                style={{
-                  backgroundColor: backgroundColor,
-                }}
-              />
-              {isBackgroundColorPickerOpen ? (
-                <ClickAwayListener
-                  onClickAway={() => setIsBackgroundColorPickerOpen(false)}
-                >
-                  <HexColorPicker
-                    className="backgroundColorPicker"
-                    color={backgroundColor}
-                    onChange={setBackgroundColor}
-                  />
-                </ClickAwayListener>
-              ) : null}
+          <div className="ratioWrapper">
+            <span className="ratio">{contrastRatio.toFixed(2)}</span>
+            <span>{contrastGrade}</span>
+            <span>{overallStars}</span>
+            <div>
+              Small text <span>Stars: {"★".repeat(smallTextStars)}</span>
+            </div>
+            <div>
+              Large text <span>Stars: {"★".repeat(largeTextStars)}</span>
             </div>
           </div>
         </div>
