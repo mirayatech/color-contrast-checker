@@ -60,6 +60,31 @@ export default function App() {
     return 0.2126 * sRGB[0] + 0.7152 * sRGB[1] + 0.0722 * sRGB[2];
   }
 
+  function getContrastGrade(ratio: number): string {
+    if (ratio >= 7) return "Super";
+    if (ratio >= 4.5) return "Very Good";
+    if (ratio >= 3) return "Good";
+    if (ratio >= 2) return "Poor";
+    return "Very Poor";
+  }
+
+  function getOverallStars(grade: string): string {
+    switch (grade) {
+      case "Super":
+        return "★★★★★";
+      case "Very Good":
+        return "★★★★";
+      case "Good":
+        return "★★★";
+      case "Poor":
+        return "★★";
+      case "Very Poor":
+        return "★★";
+      default:
+        return "";
+    }
+  }
+
   return (
     <div className="container">
       <h1 className="title">Color Contrast Checker</h1>
