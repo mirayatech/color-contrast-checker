@@ -85,6 +85,18 @@ export default function App() {
     }
   }
 
+  function getStarsForLargeText(ratio: number): number {
+    if (ratio >= 4.5) return 3; // Good
+    if (ratio >= 3) return 2; // Ok
+    return 1; // Bad
+  }
+
+  function getStarsForSmallText(ratio: number): number {
+    if (ratio >= 7) return 3; // Good
+    if (ratio >= 4.5) return 2; // Ok
+    return 1; // Bad
+  }
+
   return (
     <div className="container">
       <h1 className="title">Color Contrast Checker</h1>
