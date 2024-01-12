@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import "./cardRightSide.css";
+import { ContentItemType, getRandomTextPlaceholder } from "../../utilities";
 
 type CardRightSideProps = {
   textColor: string;
@@ -9,19 +11,19 @@ export function CardRightSide({
   textColor,
   backgroundColor,
 }: CardRightSideProps) {
+  const [contentItem, setContentItem] = useState<ContentItemType>({
+    title: "",
+    text: "",
+  });
+
+  useEffect(() => {
+    setContentItem(getRandomTextPlaceholder());
+  }, []);
+
   return (
-    <div
-      className="cardRightSide"
-      style={{
-        backgroundColor: backgroundColor,
-      }}
-    >
-      <h3 style={{ color: textColor }}>Food = Yummy</h3>
-      <p style={{ color: textColor }}>
-        Tonight's dinner special features grilled salmon with a lemon-herb
-        butter sauce, served alongside roasted vegetables and a quinoa salad.
-        For dessert, we have a classic apple pie topped with vanilla ice cream.
-      </p>
+    <div className="cardRightSide" style={{ backgroundColor: backgroundColor }}>
+      <h3 style={{ color: textColor }}>{contentItem.title}</h3>{" "}
+      <p style={{ color: textColor }}>{contentItem.text}</p>{" "}
     </div>
   );
 }
