@@ -1,3 +1,14 @@
+:root {
+  --border-color: #d6d6d6;
+  --poor-contrast-bg: #fbd0da;
+  --poor-contrast-color: #5f071c;
+  --good-contrast-bg: #fbf5d0;
+  --good-contrast-color: #5f5207;
+  --very-good-contrast-bg: #d2fbd0;
+  --very-good-contrast-color: #0d5f07;
+  --subtitle-color: #7e7d84;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 * {
@@ -29,14 +40,14 @@ button {
 }
 
 .subtitle {
-  color: #7e7d84;
+  color: var(--subtitle-color);
   font-weight: 400;
   font-size: 1.25rem;
   padding: 10px 0 100px;
 }
 
 .card {
-  border: 1px solid #dfdfdf;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   max-width: 1000px;
   display: grid;

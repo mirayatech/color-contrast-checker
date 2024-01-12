@@ -64,20 +64,20 @@
 .small-text-rating.poor-contrast,
 .large-text-rating.poor-contrast,
 .contrast-info.poor-contrast {
-  background-color: #fbd0da;
-  color: #5f071c;
+  background-color: var(--poor-contrast-bg);
+  color: var(--poor-contrast-color);
 }
 
 .small-text-rating.good-contrast,
 .large-text-rating.good-contrast,
 .contrast-info.good-contrast {
-  background-color: #fbf5d0;
-  color: #5f5207;
+  background-color: var(--good-contrast-bg);
+  color: var(--good-contrast-color);
 }
 
 .small-text-rating.very-good-contrast,
 .large-text-rating.very-good-contrast,
 .contrast-info.very-good-contrast {
-  background-color: #d2fbd0;
-  color: #0d5f07;
+  background-color: var(--very-good-contrast-bg);
+  color: var(--very-good-contrast-color);
 }
