@@ -41,16 +41,6 @@
   outline: none;
 }
 
-.text-color-section .input-wrapper button {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  position: absolute;
-  top: 15px;
-  right: 6px;
-}
-
 .background-color-section label {
   font-size: 0.9rem;
   font-weight: 500;
@@ -65,12 +55,13 @@
   outline: none;
 }
 
-.background-color-section .input-wrapper button {
+.background-color-section .input-wrapper button,
+.text-color-section .input-wrapper button {
   width: 32px;
   height: 32px;
   border-radius: 6px;
   border: 1px solid var(--border-color);
   position: absolute;
-  top: 15px;
-  right: 6px;
+  top: 17px;
+  right: 8px;
 }

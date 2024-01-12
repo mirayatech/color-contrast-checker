@@ -1,4 +1,5 @@
 :root {
+  --white: #fff;
   --border-color: #d6d6d6;
   --poor-contrast-bg: #fbd0da;
   --poor-contrast-color: #5f071c;
@@ -23,6 +24,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fcfdff;
 }
 
 button {
@@ -47,6 +49,7 @@ button {
 }
 
 .card {
+  background-color: var(--white);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   max-width: 1000px;
