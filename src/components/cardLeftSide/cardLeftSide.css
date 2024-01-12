@@ -27,6 +27,11 @@
   z-index: 1;
 }
 
+.text-color-section .input-wrapper input,
+.background-color-section .input-wrapper input {
+  font-size: 1rem;
+}
+
 .text-color-section .input-wrapper input {
   margin-top: 10px;
   width: 100%;
