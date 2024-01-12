@@ -1,0 +1,83 @@
+.contrast-heading {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contrast-ratio-display {
+  gap: 5px;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.contrast-ratio-display .ratio-value {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.contrast-ratio-display .contrast-info .ratio-value-wrapper {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stars-display {
+  display: flex;
+  gap: 3px;
+  font-size: 1.1rem;
+}
+
+.star-symbol {
+  display: flex;
+  gap: 3px;
+  font-size: 0.9rem;
+}
+
+.contrast-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 30px;
+  border-radius: 10px 10px 0 0;
+}
+
+.text-rating-section {
+  gap: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-text-rating,
+.large-text-rating {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.small-text-rating.poor-contrast,
+.large-text-rating.poor-contrast,
+.contrast-info.poor-contrast {
+  background-color: #fbd0da;
+  color: #5f071c;
+}
+
+.small-text-rating.good-contrast,
+.large-text-rating.good-contrast,
+.contrast-info.good-contrast {
+  background-color: #fbf5d0;
+  color: #5f5207;
+}
+
+.small-text-rating.very-good-contrast,
+.large-text-rating.very-good-contrast,
+.contrast-info.very-good-contrast {
+  background-color: #d2fbd0;
+  color: #0d5f07;
+}
