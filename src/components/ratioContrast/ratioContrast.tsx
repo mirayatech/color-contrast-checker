@@ -1,4 +1,4 @@
-import { GoStarFill, GoStar } from "react-icons/go";
+import { IoStar, IoStarOutline } from "react-icons/io5";
 import {
   getContrastGrade,
   getContrastRatio,
@@ -16,7 +16,9 @@ type RatioContrastProps = {
 const renderStars = (totalStars: number, filledStars: number) => {
   const stars = [];
   for (let i = 0; i < totalStars; i++) {
-    stars.push(i < filledStars ? <GoStarFill key={i} /> : <GoStar key={i} />);
+    stars.push(
+      i < filledStars ? <IoStar key={i} /> : <IoStarOutline key={i} />
+    );
   }
   return stars;
 };
