@@ -21,14 +21,16 @@ export function CardLeftSide({
   const [isBackgroundColorPickerOpen, setIsBackgroundColorPickerOpen] =
     useState(false);
 
-  function handleColorChange(setColor: (color: string) => void) {
+  const handleColorChange = (setColor: (color: string) => void) => {
     return (event: React.FocusEvent<HTMLInputElement>) => {
       setColor(formatColorCode(event.target.value));
     };
-  }
+  };
+
   const handleTextColorBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     setTextColor(formatColorCode(event.target.value));
   };
+
   const handleBackgroundColorBlur = (
     event: React.FocusEvent<HTMLInputElement>
   ) => {

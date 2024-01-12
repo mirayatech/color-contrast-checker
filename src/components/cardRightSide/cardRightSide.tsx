@@ -22,8 +22,8 @@ export function CardRightSide({
 
   return (
     <div className="cardRightSide" style={{ backgroundColor: backgroundColor }}>
-      <h3 style={{ color: textColor }}>{contentItem.title}</h3>{" "}
-      <p style={{ color: textColor }}>{contentItem.text}</p>{" "}
+      <h3 style={{ color: textColor }}>{contentItem.title}</h3>
+      <p style={{ color: textColor }}>{contentItem.text}</p>
     </div>
   );
 }

@@ -13,14 +13,6 @@ type RatioContrastProps = {
   backgroundColor: string;
 };
 
-const renderStars = (totalStars: number, filledStars: number) => {
-  const stars = [];
-  for (let i = 0; i < totalStars; i++) {
-    stars.push(i < filledStars ? <GoStarFill key={i} /> : <GoStar key={i} />);
-  }
-  return stars;
-};
-
 export function RatioContrast({
   textColor,
   backgroundColor,
@@ -35,6 +27,14 @@ export function RatioContrast({
     largeTextStars,
     smallTextStars
   );
+
+  const renderStars = (totalStars: number, filledStars: number) => {
+    const stars = [];
+    for (let i = 0; i < totalStars; i++) {
+      stars.push(i < filledStars ? <GoStarFill key={i} /> : <GoStar key={i} />);
+    }
+    return stars;
+  };
 
   const getRatioColorBackground = () => {
     if (contrastGrade === "Poor" || contrastGrade === "Very Poor") {
@@ -87,7 +87,6 @@ export function RatioContrast({
 
         <div className="text-rating-section">
           <div className={`small-text-rating ${smallTextColorShades}`}>
-            {" "}
             Small text
             <span className="star-symbol">
               {renderStars(3, smallTextStars)}
