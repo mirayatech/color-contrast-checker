@@ -1,4 +1,12 @@
-export const getOverallStars = (grade: string): string => {
+export const getOverallStars = (
+  grade: string,
+  largeTextStars: number,
+  smallTextStars: number
+): string => {
+  if (largeTextStars === 3 && smallTextStars === 3) {
+    return "★★★★★";
+  }
+
   switch (grade) {
     case "Super":
       return "★★★★★";
@@ -9,14 +17,14 @@ export const getOverallStars = (grade: string): string => {
     case "Poor":
       return "★★";
     case "Very Poor":
-      return "★★";
+      return "★";
     default:
       return "";
   }
 };
 
 export const getStarsForLargeText = (ratio: number): number => {
-  if (ratio >= 3) return 2;
+  if (ratio >= 3) return 3;
   return 1;
 };
 
