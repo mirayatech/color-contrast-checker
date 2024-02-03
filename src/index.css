@@ -16,15 +16,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: #fcfdff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container{
+  padding: 2%;
 }
 
 button {
@@ -55,4 +58,15 @@ button {
   max-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+
+@media (max-width: 45rem) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .subtitle{
+    padding-bottom: 20px;
+  }
 }

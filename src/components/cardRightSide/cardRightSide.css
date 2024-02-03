@@ -20,3 +20,9 @@
   font-weight: 500;
   font-size: 1.2rem;
 }
+
+@media (max-width: 45rem) {
+  .cardRightSide{
+    border-radius: 20px;
+  }
+}
